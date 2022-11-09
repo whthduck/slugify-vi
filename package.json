@@ -1,0 +1,61 @@
+{
+  "name": "@whthduck/slugify-vi",
+  "version": "0.0.1",
+  "description": "Template repo",
+  "homepage": "https://github.com/whthduck/slugify-vi#readme",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "ivannguyendev",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist *tsbuildinfo",
+    "build": "APP_VERSION=$npm_package_version yarn clean && webpack --config webpack.prod.config.js",
+    "build:docker": "webpack --config webpack.prod.config.js",
+    "test": "yarn clean && tsc && ava reset-cache && ava"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:whthduck/slugify-vi.git"
+  },
+  "keywords": [
+    "slugify-vi",
+    "javascript",
+    "nodejs"
+  ],
+  "dependencies": {
+    "debug": "^4.3.4"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^3.0.1",
+    "@types/debug": "^4.1.7",
+    "@types/node": "~12",
+    "@types/webpack": "^5.28.0",
+    "ava": "^5.0.1",
+    "eslint": "~7.10",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-import": "2.22.1",
+    "rimraf": "~3.0",
+    "ts-loader": "~6.1",
+    "ts-node": "~8.4",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "~4.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "ava": {
+    "typescript": {
+      "rewritePaths": {
+        "src/": "src/"
+      },
+      "compile": false
+    }
+  }
+}
