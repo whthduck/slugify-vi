@@ -3,13 +3,13 @@ const path = require('path');
 const serverConfig = {
   target: 'node',
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'lib.node.js',
   },
   module: {
-    rules: [{ test: /\.ts$/, use: 'ts-loader' }],
+    rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
   },
   resolve: {
     alias: {},
@@ -20,13 +20,13 @@ const serverConfig = {
 const clientConfig = {
   target: 'web',
   mode: 'production',
-  entry: './src/index.js',
+  entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'lib.js',
   },
   module: {
-    rules: [{ test: /\.ts$/, use: 'ts-loader' }],
+    rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
   },
   resolve: {
     alias: {},

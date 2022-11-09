@@ -9,10 +9,7 @@ const serverConfig = {
     filename: 'lib.node.js',
   },
   module: {
-    rules: [
-      { test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' },
-      { test: /^(?!.*\.spec\.js$).*\.js$/, use: 'ts-loader' },
-    ],
+    rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
   },
   resolve: {
     alias: {},
@@ -29,10 +26,7 @@ const clientConfig = {
     filename: 'lib.js',
   },
   module: {
-    rules: [
-      { test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' },
-      { test: /^(?!.*\.spec\.js$).*\.js$/, use: 'ts-loader' },
-    ],
+    rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
   },
   resolve: {
     alias: {},
