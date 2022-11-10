@@ -1,6 +1,6 @@
 {
   "name": "@whthduck/slugify-vi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Template repo",
   "homepage": "https://github.com/whthduck/slugify-vi#readme",
   "main": "dist/index.js",
