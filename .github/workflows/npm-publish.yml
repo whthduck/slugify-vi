@@ -4,30 +4,30 @@ on:
     branches:
       - main
 jobs:
-  release-github:
-    runs-on: ubuntu-latest
-    if: "startsWith(github.event.head_commit.message, '[RELEASE]')"
-    permissions: 
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
-          registry-url: https://registry.npmjs.org/
-          scope: '@whthduck'      
-      - run: yarn && yarn build
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com
-          scope: '@whthduck'
-      - name: Pushlish to GIT
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
+  # release-github:
+  #   runs-on: ubuntu-latest
+  #   if: "startsWith(github.event.head_commit.message, '[RELEASE]')"
+  #   permissions: 
+  #     contents: read
+  #     packages: write
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     # Setup .npmrc file to publish to npm
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 12
+  #         registry-url: https://registry.npmjs.org/
+  #         scope: '@whthduck'      
+  #     - run: yarn && yarn build
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 12
+  #         registry-url: https://npm.pkg.github.com
+  #         scope: '@whthduck'
+  #     - name: Pushlish to GIT
+  #       run: yarn publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.GIT_TOKEN }}
 
   release-npm:
     runs-on: ubuntu-latest
