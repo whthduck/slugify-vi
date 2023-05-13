@@ -14,7 +14,6 @@
   "scripts": {
     "clean": "rimraf dist *tsbuildinfo",
     "build": "APP_VERSION=$npm_package_version yarn clean && webpack --config webpack.prod.config.js",
-    "build:docker": "webpack --config webpack.prod.config.js",
     "test": "yarn clean && tsc && ava reset-cache && ava"
   },
   "publishConfig": {
@@ -32,12 +31,9 @@
     "browser",
     "webpack"
   ],
-  "dependencies": {
-    "debug": "^4.3.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ava/typescript": "~3.0",
-    "@types/debug": "^4.1.7",
     "@types/node": "~12",
     "@types/webpack": "^5.28.0",
     "ava": "~4.3",

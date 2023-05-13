@@ -8,15 +8,15 @@ test(`specialy character`, (t) => {
 });
 
 test(`replace duplicate '-' character`, (t) => {
-  const input = 'Đài Loan -- đón';
+  const input = '---Đài Loan xác nhận đón thống đốc bang Arizona ngày 30--8';
   const result = removeMark(input, { delimiter: '-' });
-  t.is(result, 'Dai Loan - don');
+  t.is(result, 'Dai Loan xac nhan don thong doc bang Arizona ngay 30-8');
 });
 
 test(`prune start and end`, (t) => {
-  const input = '-- Đài Loan -';
+  const input = '---Đài Loan xác nhận đón thống đốc bang Arizona ngày 30--8 ---';
   const result = removeMark(input, { delimiter: '-' });
-  t.is(result, 'Dai Loan');
+  t.is(result, 'Dai Loan xac nhan don thong doc bang Arizona ngay 30-8');
 });
 
 test(`lowercase`, (t) => {
