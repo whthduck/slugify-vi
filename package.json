@@ -1,7 +1,7 @@
 {
   "name": "@whthduck/slugify-vi",
-  "version": "0.0.5",
-  "description": "Template repo",
+  "version": "0.0.6",
+  "description": "This package provides a simple and efficient way to convert Vietnamese strings to slugs by removing diacritics, converting spaces to hyphens, and stripping out any non-alphanumeric characters. For example, the string \"Cái gì thế này\" would be converted to \"cai-gi-the-nay\"",
   "homepage": "https://github.com/whthduck/slugify-vi#readme",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
     "test": "yarn clean && tsc && ava reset-cache && ava"
   },
   "publishConfig": {
-    "@whthduck:registry": "https://npm.pkg.github.com",
+    "registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "repository": {
