@@ -43,9 +43,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: yarn && yarn build
       - name: Pushlish to NPM
-        uses: JS-DevTools/npm-publish@v1
+        uses: JS-DevTools/npm-publish@v2
         with:
           token: ${{ secrets.NPM_TOKEN }}
           registry: https://registry.npmjs.org/
           access: public
-          check-version: false
+          strategy: all
