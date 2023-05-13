@@ -17,7 +17,7 @@
     "test": "yarn clean && tsc && ava reset-cache && ava"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
+    "@whthduck:registry": "https://npm.pkg.github.com",
     "access": "public"
   },
   "repository": {
