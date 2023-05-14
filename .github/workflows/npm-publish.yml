@@ -17,7 +17,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: '@whthduck'      
-      - run: yarn && yarn build
+      - run: yarn && yarn prod:build
       - name: Pushlish to GITHUB
         uses: JS-DevTools/npm-publish@v2
         with:
@@ -39,7 +39,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
           scope: '@whthduck'
-      - run: yarn && yarn build
+      - run: yarn && yarn prod:build
       - name: Pushlish to NPM
         uses: JS-DevTools/npm-publish@v2
         with:

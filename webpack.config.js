@@ -8,6 +8,7 @@ const indexConfig = {
     filename: 'index.js',
     library: 'index',
     libraryTarget: 'umd',
+    globalObject: 'this',
     clean: true,
   },
   module: {
