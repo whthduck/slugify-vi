@@ -1,12 +1,14 @@
 const path = require('path');
 
-const serverConfig = {
-  target: 'node',
+const indexConfig = {
   mode: 'development',
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'node.js',
+    filename: 'index.js',
+    library: 'index',
+    libraryTarget: 'umd',
+    clean: true,
   },
   module: {
     rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
@@ -17,21 +19,4 @@ const serverConfig = {
   },
 };
 
-const clientConfig = {
-  target: 'web',
-  mode: 'development',
-  entry: './src/index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'web.js',
-  },
-  module: {
-    rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
-  },
-  resolve: {
-    alias: {},
-    extensions: ['.js', '.ts'],
-  },
-};
-
-module.exports = [serverConfig, clientConfig];
+module.exports = [indexConfig];
