@@ -6,7 +6,7 @@ const serverConfig = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'lib.node.js',
+    filename: 'node.js',
   },
   module: {
     rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
@@ -23,7 +23,7 @@ const clientConfig = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'lib.js',
+    filename: 'web.js',
   },
   module: {
     rules: [{ test: /^(?!.*\.spec\.ts$).*\.ts$/, use: 'ts-loader' }],
